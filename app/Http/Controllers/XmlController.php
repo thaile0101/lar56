@@ -35,7 +35,7 @@ class XmlController extends Controller
     function show()
     {
         try {
-            $xml = file_get_contents(storage_path('app/mockup/xml1.xml'));
+            $xml = file_get_contents(public_path('test/xml1.xml'));
             // One function to both clean the XML string and return an array
             return json_decode(json_encode(simplexml_load_string($this->removeNamespaceFromXML($xml))), true);
         }catch (\Exception $exception) {
